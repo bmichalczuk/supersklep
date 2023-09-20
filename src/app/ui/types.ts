@@ -1,4 +1,3 @@
-
 export type ProductListItemProps = {
 	product: {
 		name: string;
