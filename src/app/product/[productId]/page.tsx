@@ -1,15 +1,11 @@
+import { getProductById } from "../../../api/products";
+import { ProductListItem } from "@/ui/molecules/ProductListItem";
 export default async function SingleProduct({
 	params,
-	searchParams,
 }: {
 	params: { productId: string };
-	searchParams: { [key: string]: string | string[] };
 }) {
-	const referral = searchParams.referral.toString();
-	return (
-		<>
-			<h1>{params.productId}</h1>
-			<p>{referral}</p>
-		</>
-	);
+	const product = await getProductById(params.productId);
+	console.log(product);
+	return <ProductListItem product={product} />;
 }

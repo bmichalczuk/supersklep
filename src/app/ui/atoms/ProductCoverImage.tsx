@@ -3,7 +3,9 @@ import type { ProductListItemProps } from "@/ui/types";
 
 export const ProductCoverImage = ({
 	product,
-}: ProductListItemProps) => {
+}: {
+	product: ProductListItemProps;
+}) => {
 	return (
 		<div className="aspect-square">
 			<Image
