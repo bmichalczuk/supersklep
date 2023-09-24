@@ -6,7 +6,6 @@ export const ProductsList = ({
 }: {
 	products: ProductListItemProps[];
 }) => {
-	console.log(products);
 	return (
 		<ul
 			data-testid="products-list"

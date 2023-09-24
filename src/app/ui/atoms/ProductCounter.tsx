@@ -1,21 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import {
-	useRouter,
-	useParams,
-	useSearchParams,
-	usePathname,
-	useSelectedLayoutSegment,
-	useSelectedLayoutSegments,
-} from "next/navigation";
+import //useRouter,
+//useParams,
+//useSearchParams,
+//usePathname,
+//useSelectedLayoutSegment,
+//useSelectedLayoutSegments,
+"next/navigation";
 
 //useSelectedLayoutSegment();
 //useSelectedLayoutSegments();
 
 export const ProductCounter = () => {
 	const [count, setCount] = useState(0);
-	console.log(useRouter());
 	return (
 		<div className="flex max-w-sm">
 			<button
