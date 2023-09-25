@@ -7,4 +7,5 @@ export type ProductListItemProps = {
 		alt: string;
 	};
 	id: string;
+	description: string;
 };
