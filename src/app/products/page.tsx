@@ -1,5 +1,8 @@
+import { getProductsList } from "../api/products";
 import { ProductsList } from "@/ui/organisms/ProductsList";
 
-export default function Home() {
-	return <ProductsList />;
+export default async function Home() {
+	const products = await getProductsList();
+
+	return <ProductsList products={products} />;
 }
