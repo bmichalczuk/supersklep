@@ -1,15 +1,11 @@
-
 export type ProductListItemProps = {
-	product: {
-		name: string;
-		price: number;
-		category: string;
-		coverImage: coverImageProps;
-		id: string;
+	name: string;
+	price: number;
+	category: string;
+	coverImage: {
+		src: string;
+		alt: string;
 	};
-};
-
-export type coverImageProps = {
-	src: string;
-	alt: string;
+	id: string;
+	description: string;
 };
