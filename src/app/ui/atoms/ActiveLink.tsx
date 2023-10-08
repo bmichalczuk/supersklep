@@ -1,12 +1,9 @@
 "use client";
 
 import { title } from "process";
-import Link, { type LinkProps } from "next/link";
+import Link from "next/link";
 import { type ReactNode } from "react";
-import {
-	usePathname,
-	useSelectedLayoutSegment,
-} from "next/navigation";
+import { usePathname } from "next/navigation";
 import type { Route } from "next";
 import clsx from "clsx";
 
@@ -14,7 +11,7 @@ type ActiveLinkProps = {
 	children: ReactNode;
 	href: Route;
 	title?: string;
-	className: LinkProps<string>;
+	className: string;
 	activeClassName: string;
 	exact?: boolean;
 };
@@ -24,11 +21,12 @@ export const ActiveLink = ({
 	children,
 	className,
 	activeClassName,
-	exact = false,
+	exact = true,
 }: ActiveLinkProps) => {
 	const pathname = usePathname();
-	const isActive = pathname === href;
-	console.log(useSelectedLayoutSegment() + " " + pathname);
+	const isActive = exact
+		? pathname === href
+		: pathname.startsWith(href);
 	return (
 		<Link
 			className={clsx(className, isActive && activeClassName)}

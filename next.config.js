@@ -17,6 +17,15 @@ const nextConfig = {
 
 		mdxRs: true,
 	},
+	async redirects() {
+		return [
+			{
+				source: "/products",
+				destination: "/products/1",
+				permanent: true,
+			},
+		];
+	},
 };
 
 const withMDX = require("@next/mdx")();

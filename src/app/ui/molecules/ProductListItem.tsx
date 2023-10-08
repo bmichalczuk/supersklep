@@ -11,7 +11,7 @@ export const ProductListItem = ({
 	const href = `/product/${product.id}`;
 	return (
 		<Link href={href}>
-			<article className="flex h-full w-full flex-col items-center justify-center space-y-4 rounded-md border-2 border-gray-200 bg-gray-200 p-4">
+			<article className=" flex h-full w-full flex-col items-center justify-center space-y-4 rounded-md border-2 border-gray-200 p-8">
 				<ProductCoverImage product={product} />
 				<ProductListItemDescription product={product} />
 			</article>

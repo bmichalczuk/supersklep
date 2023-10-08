@@ -23,6 +23,7 @@ export const SiteNav = () => {
 						title="Lista produktów"
 						className={activeLinkClassName}
 						activeClassName={activeLinkActiveClassName}
+						exact={false}
 					>
 						Products
 					</ActiveLink>

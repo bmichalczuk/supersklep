@@ -13,9 +13,9 @@ import { SuggestedProductsList } from "@/ui/organisms/SuggestedProductsList";
 export const generateMetadata = async ({
 	params,
 }: {
-	params: { productId: string };
+	params: { _id_: string };
 }): Promise<Metadata> => {
-	const product = await getProductById(params.productId);
+	const product = await getProductById(params._id_);
 	return {
 		title: product.name,
 		description: product.description,
@@ -30,14 +30,16 @@ export const generateMetadata = async ({
 export default async function SingleProduct({
 	params,
 }: {
-	params: { productId: string };
+	params: { _id_: string };
 }) {
-	const product = await getProductById(params.productId);
+	const product = await getProductById(params._id_);
 	return (
 		<>
-			<article className="max-w-md">
+			<article className="m-auto max-w-md p-10">
 				<ProductCoverImage product={product} />
+
 				<ProductListItemDescription product={product} />
+				<p className="pb-6 pt-6">{product.description}</p>
 			</article>
 			<aside>
 				<Suspense fallback="Ładowanie...">

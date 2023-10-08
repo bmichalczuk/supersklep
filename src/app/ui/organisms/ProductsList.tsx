@@ -9,7 +9,7 @@ export const ProductsList = ({
 	return (
 		<ul
 			data-testid="products-list"
-			className="grid max-w-4xl grid-cols-1 gap-8 sm:grid sm:grid-cols-2 xl:grid-cols-4"
+			className="grid max-w-7xl grid-cols-1 gap-8 sm:grid sm:grid-cols-2 xl:grid-cols-4"
 		>
 			{products.map((product: ProductListItemProps) => (
 				<li key={product.id}>
