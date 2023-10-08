@@ -5,7 +5,10 @@ export const SiteNav = () => {
 		"p-5 font-medium uppercase tracking-wider";
 	const activeLinkActiveClassName = "bg-teal-400";
 	return (
-		<nav className="col-span-4 flex h-full items-center  justify-center   ">
+		<nav
+			className="col-span-4 flex h-full items-center  justify-center"
+			role="navigation"
+		>
 			<ul className="flex justify-center space-x-1  ">
 				<li>
 					<ActiveLink

@@ -33,6 +33,7 @@ export const ActiveLink = ({
 			href={href}
 			title={title}
 			aria-current={isActive ? true : false}
+			role="link"
 		>
 			{children}
 		</Link>
