@@ -1,9 +1,11 @@
 import clsx from "clsx";
+import type { Route } from "next";
 import { ActiveLink } from "../atoms/ActiveLink";
+
 export const Pagination = ({
 	pagesLinks,
 }: {
-	pagesLinks: string[];
+	pagesLinks: Route<string>[];
 }) => {
 	return (
 		<ul aria-label="pagination" className="flex">
