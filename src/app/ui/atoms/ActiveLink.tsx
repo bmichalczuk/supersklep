@@ -7,9 +7,9 @@ import { usePathname } from "next/navigation";
 import type { Route } from "next";
 import clsx from "clsx";
 
-type ActiveLinkProps = {
+type ActiveLinkProps<T extends string> = {
 	children: ReactNode;
-	href: Route;
+	href: Route<T>;
 	title?: string;
 	className: string;
 	activeClassName: string;
@@ -22,7 +22,7 @@ export const ActiveLink = ({
 	className,
 	activeClassName,
 	exact = true,
-}: ActiveLinkProps) => {
+}: ActiveLinkProps<string>) => {
 	const pathname = usePathname();
 	const isActive = exact
 		? pathname === href
@@ -33,6 +33,7 @@ export const ActiveLink = ({
 			href={href}
 			title={title}
 			aria-current={isActive ? true : false}
+			role="link"
 		>
 			{children}
 		</Link>
