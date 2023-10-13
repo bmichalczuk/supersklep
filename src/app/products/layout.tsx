@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+
+import { type Route } from "next";
 import { getProductsList } from "@/api/products";
 import { Pagination } from "@/ui/molecules/Pagination";
 export default async function LayoutPage({
@@ -8,10 +10,9 @@ export default async function LayoutPage({
 }) {
 	const numberOfProducts = (await getProductsList(100)).length;
 	const numberOfPages = Math.ceil(numberOfProducts / 20);
-	const params = [];
-	for (let i = 1; i <= numberOfPages; i++) {
-		params.push(`/products/${i}`);
-	}
+	const params = new Array(numberOfPages).map(
+		(val, i) => `/products/${i + 1}` as Route,
+	);
 
 	return (
 		<>
