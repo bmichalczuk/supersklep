@@ -30,7 +30,7 @@ export const ActiveLink = ({
 			className={clsx(className, isActive && activeClassName)}
 			href={href}
 			title={title}
-			aria-current={isActive ? true : false}
+			aria-current={isActive ? "page" : false}
 			role="link"
 		>
 			{children}
